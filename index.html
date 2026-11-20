@@ -5,14 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pearl Street Boba</title>
   <style>
+    :root {
+      --navy: #03045e;
+      --deep-blue: #023e8a;
+      --blue: #0077b6;
+      --sea-blue: #0096c7;
+      --aqua: #00b4d8;
+      --sky: #48cae4;
+      --light-blue: #90e0ef;
+      --pale-blue: #ade8f4;
+      --mist: #caf0f8;
+      --white: #fff;
+    }
+
     body {
       margin: 0;
       padding: 1.5rem;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1rem;
       line-height: 1.5;
-      color: #222;
-      background: #f7f7f7;
+      color: var(--navy);
+      background: var(--mist);
     }
 
     header {
@@ -23,11 +36,11 @@
       max-width: 42rem;
       margin-bottom: 1.5rem;
       padding-bottom: 1rem;
-      border-bottom: 1px solid #c8e6c9;
+      border-bottom: 1px solid var(--light-blue);
     }
 
     .site-name {
-      color: #2e7d32;
+      color: var(--navy);
       font-weight: bold;
       text-decoration: none;
     }
@@ -39,9 +52,14 @@
     }
 
     nav a {
-      color: #2e7d32;
+      color: var(--sea-blue);
       font-size: 0.9rem;
       text-decoration: none;
+    }
+
+    nav a:hover,
+    .site-name:hover {
+      color: var(--blue);
     }
 
     h1 {
@@ -55,9 +73,9 @@
       margin-bottom: 2rem;
       padding: 2rem;
       min-height: 14rem;
-      color: #fff;
-      background: #2e7d32 url("images/hero.jpg") center / cover;
-      border: 1px solid #c8e6c9;
+      color: var(--white);
+      background: var(--deep-blue) url("images/hero.jpg") center / cover;
+      border: 1px solid var(--sky);
       border-radius: 0.75rem;
     }
 
@@ -65,7 +83,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(3, 4, 94, 0.68);
     }
 
     .hero > * {
@@ -83,10 +101,15 @@
     .hero a {
       display: inline-block;
       padding: 0.65rem 1rem;
-      color: #fff;
-      background: #2e7d32;
+      color: var(--white);
+      background: var(--blue);
       border-radius: 0.35rem;
       text-decoration: none;
+    }
+
+    .hero a:hover {
+      background: var(--aqua);
+      color: var(--navy);
     }
 
     .menu-images {
@@ -102,6 +125,7 @@
       width: 100%;
       height: 9rem;
       object-fit: cover;
+      border: 2px solid var(--sky);
       border-radius: 0.5rem;
     }
 
@@ -115,8 +139,8 @@
 
     .info-block {
       padding: 1rem;
-      background: #fff;
-      border: 1px solid #ddd;
+      background: var(--pale-blue);
+      border: 1px solid var(--light-blue);
       border-radius: 0.6rem;
     }
 
@@ -134,8 +158,8 @@
 
     .drink-card {
       overflow: hidden;
-      background: #fff;
-      border: 1px solid #ddd;
+      background: var(--white);
+      border: 1px solid var(--light-blue);
       border-radius: 0.6rem;
     }
 
@@ -148,6 +172,17 @@
 
     .drink-card-content {
       padding: 0.9rem;
+    }
+
+    .drink-badge {
+      display: inline-block;
+      margin-bottom: 0.45rem;
+      padding: 0.2rem 0.5rem;
+      color: var(--navy);
+      background: var(--aqua);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: bold;
     }
 
     .drink-card h3 {
@@ -169,6 +204,7 @@
     h2 {
       margin: 1.75rem 0 0.5rem;
       font-size: 1.2rem;
+      color: var(--navy);
     }
 
     p {
@@ -179,6 +215,8 @@
     ul {
       margin: 0 0 0.75rem;
       padding-left: 1.25rem;
+      background: var(--pale-blue);
+      border-left: 4px solid var(--aqua);
     }
 
     li {
@@ -188,9 +226,15 @@
     footer {
       margin-top: 2.5rem;
       padding-top: 1.25rem;
-      border-top: 1px solid #c8e6c9;
-      color: #555;
+      padding-bottom: 0.25rem;
+      border-top: 3px solid var(--sky);
+      color: var(--mist);
       font-size: 0.9rem;
+      background: var(--navy);
+    }
+
+    footer strong {
+      color: var(--white);
     }
 
     footer p {
@@ -239,6 +283,7 @@
     <article class="drink-card">
       <img src="images/milk-tea.jpg" alt="Classic milk tea with boba" />
       <div class="drink-card-content">
+        <span class="drink-badge">Popular</span>
         <h3>Classic Milk Tea</h3>
         <p>Rich black tea, creamy milk, and chewy boba pearls.</p>
       </div>
@@ -246,6 +291,7 @@
     <article class="drink-card">
       <img src="images/brown-sugar-cup.jpg" alt="Brown sugar milk tea" />
       <div class="drink-card-content">
+        <span class="drink-badge">House favorite</span>
         <h3>Brown Sugar Milk Tea</h3>
         <p>Caramelized brown sugar layered with smooth milk tea.</p>
       </div>
@@ -253,6 +299,7 @@
     <article class="drink-card">
       <img src="images/taro.jpg" alt="Taro milk tea" />
       <div class="drink-card-content">
+        <span class="drink-badge">Creamy pick</span>
         <h3>Taro Milk Tea</h3>
         <p>A sweet, creamy taro favorite with a soft purple color.</p>
       </div>
